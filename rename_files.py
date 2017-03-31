@@ -2,7 +2,6 @@ from os import walk
 from glob import glob
 import os
 
-
 def get_file_names(path):
     f = []
     for (dirpath, dirnames, filenames) in walk(path):
