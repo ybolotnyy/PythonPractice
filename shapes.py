@@ -45,5 +45,6 @@ draw_shape(triangle, 5)
 draw_shape(square, 5)
 draw_shape(pentagon, 5)
 draw_shape(hexagon, 5)
+draw_shape(Shape(7), 5)
 
 window.exitonclick()
