@@ -9,7 +9,7 @@ def draw_square(total_sides, total_figurines):
     brad = turtle.Turtle()
     brad.shape("turtle")
     brad.color("yellow")
-    brad.speed(2)
+    brad.speed(100)
 
 
     for i in range(0, total_figurines):
@@ -23,4 +23,4 @@ def draw_square(total_sides, total_figurines):
     window.exitonclick()
 
 
-draw_square(4,9)
+draw_square(4,30)
