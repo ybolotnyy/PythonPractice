@@ -7,7 +7,7 @@ class Shape:
         print("total %d shapes exist" % Shape.shapesCount)
 
     def __init__(self, corners):
-        self.cornersTotal = corners
+        self.cornersAmount = corners
         Shape.shapesCount += 1
         print ("%d-corners shape created" % corners)
         self.displayCount()
@@ -20,46 +20,30 @@ def initTurtle(shape, color, speed):
     brad.speed(speed)
     return brad
 
-def draw_shape(total_sides, total_figurines):
+def draw_shape(shape, shapesCount):
 
     brad = initTurtle("turtle", "yellow", 100)
+    cornersQuantity = shape.cornersAmount
 
-    window = turtle.Screen()
-    window.bgcolor("red")
-
-
-    for i in range(0, total_figurines):
-        angle_diff = int(360/total_figurines)
+    for i in range(0, shapesCount):
+        angle_diff = int(360/shapesCount)
         brad.right(angle_diff)
-        for i in range(0, total_sides):
+        for i in range(0, cornersQuantity):
             brad.forward(100)
-            brad.right(int(360 / total_sides))
+            brad.right(int(360 / cornersQuantity))
 
-    window.exitonclick()
-
-def draw_shapes(total_sides, total_figurines):
-
-    brad = initTurtle("turtle", "yellow", 100)
-    window = turtle.Screen()
-    window.bgcolor("red")
-
-
-    # for i in range(0, total_figurines):
-    #     angle_diff = int(360/total_figurines)
-    #     brad.right(angle_diff)
-    #     for i in range(0, total_sides):
-    #         brad.forward(100)
-    #         brad.right(int(360 / total_sides))
-
-    window.exitonclick()
 
 triangle = Shape(3)
 square = Shape(4)
 pentagon = Shape(5)
 hexagon = Shape(6)
 
+window = turtle.Screen()
+window.bgcolor("red")
 
+draw_shape(triangle, 5)
+draw_shape(square, 5)
+draw_shape(pentagon, 5)
+draw_shape(hexagon, 5)
 
-
-
-draw_shape(4,10)
+window.exitonclick()
