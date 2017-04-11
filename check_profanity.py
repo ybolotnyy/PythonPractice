@@ -22,5 +22,4 @@ def check_profanity(text_to_check):
         print("No course words. Looks good!")
     else:
         print("Could not scan the doc properly")
-
 read_text()
