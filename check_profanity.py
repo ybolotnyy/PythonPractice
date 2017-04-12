@@ -10,10 +10,6 @@ def read_text():
     quotes = open(home_directory + "/PycharmProjects/PythonPractice/resourses/movie_quotes.txt")
     contents_of_file = quotes.read()
     quotes.close()
-
-    for line in contents_of_file:
-        print(line)
-
     check_profanity(contents_of_file)
 
 def check_profanity(text_to_check):
