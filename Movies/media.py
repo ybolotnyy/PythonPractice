@@ -1,6 +1,7 @@
 import webbrowser
 
 class Movie():
+    name = "super puper"
     def __init__(self,
                  movie_title,
                  movie_storyline,

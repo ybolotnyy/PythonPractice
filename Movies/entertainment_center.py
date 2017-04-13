@@ -23,4 +23,8 @@ ratatouille = media.Movie("Ratatouille",
 
 movies = [toy_story, avatar, school_of_rock, ratatouille]
 
-fresh_tomatoes.open_movies_page(movies)
+#fresh_tomatoes.open_movies_page(movies)
+
+print("module - %s" % avatar.__module__)
+print("class - %s" % avatar.__class__)
+print("class name: %s" % avatar.__class__.__name__)
