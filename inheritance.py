@@ -25,5 +25,5 @@ class Child(Parent):
 will_smith = Parent("Will", "Smith", "blue")
 will_smith.print_info()
 
-bonnie_smith = Child("Bonnie", "Smith", "grey", 3)
+bonnie_smith = Child("Bonnie", will_smith.last_name, "grey", 3)
 bonnie_smith.print_info()
