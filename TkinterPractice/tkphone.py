@@ -1,26 +1,4 @@
 from Tkinter import *
-from phones import *
-
-def whichSelected () :
-    print "At %s of %d" % (select.curselection(), len(phonelist))
-    return int(select.curselection()[0])
-
-def addEntry () :
-    phonelist.append ([nameVar.get(), phoneVar.get()])
-    setSelect ()
-
-def updateEntry() :
-    phonelist[whichSelected()] = [nameVar.get(), phoneVar.get()]
-    setSelect ()
-
-def deleteEntry() :
-    del phonelist[whichSelected()]
-    setSelect ()
-
-def loadEntry  () :
-    name, phone = phonelist[whichSelected()]
-    nameVar.set(name)
-    phoneVar.set(phone)
 
 def makeWindow () :
     global nameVar, phoneVar, select
@@ -41,10 +19,10 @@ def makeWindow () :
 
     frame2 = Frame(win)       # Row of buttons
     frame2.pack()
-    b1 = Button(frame2,text=" Add  ",command=addEntry)
-    b2 = Button(frame2,text="Update",command=updateEntry)
-    b3 = Button(frame2,text="Delete",command=deleteEntry)
-    b4 = Button(frame2,text=" Load ",command=loadEntry)
+    b1 = Button(frame2,text=" Add  ")
+    b2 = Button(frame2,text="Update")
+    b3 = Button(frame2,text="Delete")
+    b4 = Button(frame2,text=" Load ")
     b1.pack(side=LEFT); b2.pack(side=LEFT)
     b3.pack(side=LEFT); b4.pack(side=LEFT)
 
@@ -57,12 +35,5 @@ def makeWindow () :
     select.pack(side=LEFT,  fill=BOTH, expand=1)
     return win
 
-def setSelect () :
-    phonelist.sort()
-    select.delete(0,END)
-    for name,phone in phonelist :
-        select.insert (END, name)
-
 win = makeWindow()
-setSelect ()
 win.mainloop()
